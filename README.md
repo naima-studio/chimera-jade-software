@@ -14,8 +14,8 @@ pip3 install rns lxmf
 
 ### 2. Clone this Repository
 Clone this repository in the home directory
-### 3. Install Reticulum Config 
 
+### 3. Install Reticulum Config 
 Place the configuration file found at /reticulum/config into ~/.reticulum/config
 
 ### 4. Start Reticulum
