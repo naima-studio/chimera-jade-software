@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="00c6b2e4-e323-4c23-a422-b167a6f1cf31" name="Jade2">
+        <fileTransfer rootFolder="/home/jade2" accessType="SFTP" host="10.0.0.110" port="22" sshConfigId="2f0621c5-c2de-4de7-896a-130ead9adbc7" sshConfig="jade2@10.0.0.110:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" isUseRsync="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
