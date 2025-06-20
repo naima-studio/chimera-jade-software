@@ -1,4 +1,4 @@
-# Chimera Ruby Software
+# Chimera Jade Software
 
 This repo contains the firmware and software for controlling the chimera ruby
 
