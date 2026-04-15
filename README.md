@@ -41,12 +41,16 @@ Currently utilizing the Remote-SSH plugin in Visual Studio. It allows you to con
 ## Assigning a static IP Address to the PI
 Ran into an issue of constantly having to edit the config file for the Remote-SSH extention in VS-Code. By assisgning a static IP (only for dev devices), a new IP is not assigned every startup.
 
-1. SSH into the PI
-2. Set the static IP for the USB gadget
->sudo nmcli connection modify "USB Gadget (client)"\
->ipv4.addresses 192.168.2.2/24\ -- (example IP assignment. Make sure that this wont conflict with any already created key generations for this IP)
+1. Remove previous host fingerprints on the IP you are going to assign to the pi
+>ssh-keygen -R 192.168.2.2
+2. Connect the PI to your device.
+2. SSH into the PI.
+3. Set the static IP for the USB gadget.
+>sudo nmcli connection modify "USB Gadget (client)"\ 
+>ipv4.addresses 192.168.2.2/24\ 
 >ipv4.method manual
-3. Restart PI
+(This is an example IP assignment. You can choose any open IP)
+4. Restart PI
 
 ## (Optional) Setup quick-dev environment for VS-Code with Remote-SSH Extention:
 
