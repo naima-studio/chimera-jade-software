@@ -38,32 +38,31 @@ Currently utilizing the Remote-SSH plugin in Visual Studio. It allows you to con
 
 # Setup
 
-## To add the pi to your list of devices:
-
-1. Know your devices IP, User, and Password information. 
-2. Have your PI connected via wifi or usb and have SSH enabled and running.
-3. Edit the Configuration file of the Remote-SSH and add (example):
-   - Host jade1
-    	HostName 192.168.2.2
-    	User jade1
-    	IdentityFile ~/.ssh/id_rsa
-    	ServerAliveInterval 30
-    	ServerAliveCountMax 3
-4. It will then connect to the PI and you should be able to develop on it from here directly.
-
 ## Assigning a static IP Address to the PI
 Ran into an issue of constantly having to edit the config file for the Remote-SSH extention in VS-Code. By assisgning a static IP (only for dev devices), a new IP is not assigned every startup.
 
 1. SSH into the PI
 2. Set the static IP for the USB gadget
 >sudo nmcli connection modify "USB Gadget (client)"\
->ipv4.addresses 192.168.2.2/24\
+>ipv4.addresses 192.168.2.2/24\ -- (example IP assignment. Make sure that this wont conflict with any already created key generations for this IP)
 >ipv4.method manual
-3. Set DNS
->sudo nmcli connection modify "USB Gadget (client)"\
->ipv4.dns "1.1.1.1 8.8.8.8"
-4. Restart PI
+3. Restart PI
 
+## (Optional) Setup quick-dev environment for VS-Code with Remote-SSH Extention:
+
+<del>
+1. Know your devices IP, User, and Password information.
+2. Have your PI connected via wifi or usb and have SSH enabled and running.
+3. Edit the Configuration file of the Remote-SSH and add (example):
+Host jade1\
+	HostName 192.168.2.2\
+    IdentityFile ~/.ssh/id_rsa\
+  	ServerAliveInterval 30\
+    ServerAliveCountMax 3
+4. It will then connect to the PI and you should be able to develop on it from here directly.
+</del>
+
+__Currently not oppperational...__
 
 
 
