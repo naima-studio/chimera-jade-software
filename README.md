@@ -20,8 +20,8 @@ You must have the Raspberry Pi Imager application installed on your device befor
 	.../rpi-imager/doc/local_json
 3. Run Script
 	./create_local_json.py --online --capabilities usb_otg --device-capabilities usb_otg
-4. Open in file manager and click on the file
-	create_local_json.py - (this will open your Raspberry Pi Imager)
+4. Open the directory in your file manager and click on the file
+>os_list_local.rpi-imager-manifest.json - (this will open your Raspberry Pi Imager)
 5. Continue with setup process. Durring this, add:
 	- A user and password
 	- Enable SSH
