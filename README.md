@@ -45,12 +45,20 @@ Ran into an issue of constantly having to edit the config file for the Remote-SS
 >ssh-keygen -R 192.168.2.2
 2. Connect the PI to your device.
 2. SSH into the PI.
-3. Set the static IP for the USB gadget.
->sudo nmcli connection modify "USB Gadget (client)"\ 
->ipv4.addresses 192.168.2.2/24\ 
+3. Set the static IP for the USB gadget (This is an example IP assignment. You can choose any open IP).
+>sudo nmcli connection modify "USB Gadget (client)"\
+>ipv4.addresses 192.168.2.2/24\
 >ipv4.method manual
-(This is an example IP assignment. You can choose any open IP)
 4. Restart PI
+5. Forward your Internet connection from your device
+>sudo sysctl -w net.inet.ip.forwarding=1
+
+## File Transfer Over SSH
+Simply run this command for:
+- Upload
+>scp local_file user@remote_host:/path/to/destination/
+- Download
+>
 
 ## (Optional) Setup quick-dev environment for VS-Code with Remote-SSH Extention:
 
