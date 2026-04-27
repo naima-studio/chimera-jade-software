@@ -24,6 +24,7 @@ You must have the Raspberry Pi Imager application installed on your device befor
 >os_list_local.rpi-imager-manifest.json - (this will open your Raspberry Pi Imager)
 5. Continue with setup process. Durring this, add:
 	- A user and password
+	- (optional) Add a network. Personally, I added my iPhone hotspot since I develop on the go mostly.
 	- Enable SSH
 	- Enable USB Gadget Mode
 6. After PI image has been flashed
@@ -42,23 +43,22 @@ Currently utilizing the Remote-SSH plugin in Visual Studio. It allows you to con
 Ran into an issue of constantly having to edit the config file for the Remote-SSH extention in VS-Code. By assisgning a static IP (only for dev devices), a new IP is not assigned every startup.
 
 1. Remove previous host fingerprints on the IP you are going to assign to the pi
->ssh-keygen -R 192.168.2.2
+>ssh-keygen -R 10.12.194.1
 2. Connect the PI to your device.
 2. SSH into the PI.
 3. Set the static IP for the USB gadget (This is an example IP assignment. You can choose any open IP).
->sudo nmcli connection modify "USB Gadget (client)"\
->ipv4.addresses 192.168.2.2/24\
->ipv4.method manual
+>sudo nmcli connection modify "USB Gadget (client)" \\\
+>  ipv4.addresses 10.12.194.2/24 \\\
+>  ipv4.gateway 10.12.194.1 \\\
+>  ipv4.dns 8.8.8.8 \\\
+>  ipv4.method manual
 4. Restart PI
-5. Forward your Internet connection from your device
->sudo sysctl -w net.inet.ip.forwarding=1
 
 ## File Transfer Over SSH
 Simply run this command for:
 - Upload
 >scp local_file user@remote_host:/path/to/destination/
 - Download
->
 
 ## (Optional) Setup quick-dev environment for VS-Code with Remote-SSH Extention:
 
@@ -76,8 +76,13 @@ Host jade1\
 
 __Currently not oppperational...__
 
+## Install pip
+>sudo apt update\
+>sudo apt install python3-pip
 
-
+## Install RNS
+This is the R-Node installation
+>pip install rns
 
 
 
