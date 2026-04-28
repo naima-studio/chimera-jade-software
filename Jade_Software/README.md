@@ -81,9 +81,12 @@ __Currently not oppperational...__
 >sudo apt install python3-pip
 
 ## Install RNS
-This is the R-Node installation
->pip install rns
+This is the R-Node repo install.
 
+1. CD into your virtual environment or create one using:
+>python3 -m venv path/to/venv
+2. Install RNS
+>pip install rns
 
 
 
